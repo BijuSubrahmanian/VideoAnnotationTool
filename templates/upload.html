@@ -1,0 +1,94 @@
+<doctype html>
+<title>EasyAnnotate - Automated annotation tool</title>
+
+<body class="intro-header" style="background-image: url('/static/EasyAnnotate_bg.PNG'); background-repeat: no-repeat;
+  background-size: cover;">
+<br><br><br><br><br>
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upload video</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+
+
+</p>
+
+<form method="post" action="/uploadvideo/" enctype="multipart/form-data">
+    <dl>
+			<p>
+				<input type="file" name="file" multiple="true" autocomplete="off" required>
+			</p>
+	    </dl>
+
+    <div>
+		<p>
+			<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="file" multiple="true" autocomplete="off" required>
+			!-->
+			<div>
+			Select Class : <select name="classtype" id="classtype">
+			<option value="scissors" selected>scissors</option>
+			<option value="knife">knife</option>
+			<option value="bottle">bottle</option>
+			<option value="hammer">hammer</option>
+			<option value="book">book</option>
+			<option value="backpack">backpack</option>
+			<option value="person">person</option>
+			</div>
+
+</select>
+<div>
+Product Label :<input type="text" name="productlabel" id="productlabel"></div>
+			<div>
+<div>
+Image Resolution :<select name="imgresolution" id="imgresolution">
+			<option value="0" selected>1920 x 1080</option>
+			<option value="1">1280 x 720</option>
+			<option value="2">1080 x 1080</option></select>
+</div>
+<div>
+Annotation Type :<select name="anntype" id="anntype">
+			<option value="0" selected>box</option>
+			</select>
+</div>
+
+<table> <tr><td>
+<div>
+Augmentation  :<select name="augyesno" id="augyesno">
+			<option value="yes" selected>yes</option>
+			<option value="no" selected>no</option>
+			</select>
+</div>
+<div>
+Augmentation flip :<select name="augflipyesno" id="augflipyesno">
+			<option value="yes" selected>yes</option>
+			<option value="no" selected>no</option>
+			</select>
+</div>
+<div>
+Augmentation zoom  :<select name="augzoomyesno" id="augzoomyesno">
+			<option value="yes" selected>yes</option>
+			<option value="no" selected>no</option>
+			</select>
+
+</div>
+<div>
+Augmentation sample  :<select name="sample" id="sample">
+			<option value="100" selected>100</option>
+			<option value="200" selected>200</option>
+			<option value="500" selected>500</option>
+			</select>
+
+</div>
+</table> </tr></td>
+			<div><input type="submit" value="Annotate"></div>
+
+
+
+		</p>
+</form>
