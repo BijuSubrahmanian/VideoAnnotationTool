@@ -8,3 +8,5 @@
         pip install -r requirements.txt
     # Run 
         python main.py  (which would open a web interface for annotation - flask app )
+#View and correct Auto annotated annotations [BOX] ( used labelme (labeling tool for demo)
+![image](https://user-images.githubusercontent.com/53175489/147387332-0eef08f0-225f-446e-89f5-14a96b681440.png)
